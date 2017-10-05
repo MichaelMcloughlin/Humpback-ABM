@@ -1,0 +1,70 @@
+This model was developed in Python Ver 2.7.13 using the SciPy packages. 
+You’ll need to install these in order to run the model. 
+I suggest using the Anaconda distribution (ver 2.0.0) of Python on a Mac laptop (OS X Ver. 10.9.2).
+This tutorial will proceed assuming you’re running this version of Python. Here’s a link to where
+you can find the version of Anaconda used to create this model 
+
+https://repo.continuum.io/archive/  
+
+you change to the directory this model is held in. On terminal it would look something like this. 
+
+cd  .../Digital Supplement Michael Mcloughlin Thesis/Migratory Model (Chapter 3)
+
+Where the … is a placeholder for your own root directory. 
+
+Then open up python or whatever python compiler you want. 
+I usually just run my version of python from the command line and type the following:
+
+execfile(‘UnifiedModel_12040217.py’) 
+
+Then to run the model type the following:
+
+songModel()
+
+in the brackets you can input any of the parameters below. Their default values are given below as well.                            
+
+maxSong = 100, #Maximum length of a song
+r = 0.1, #Zone of repulsion
+stopsong = 0.1, # zone of song interruption 
+width = 2, #width of our starting arena
+height = 1000, #height of our starting arena
+i = 12000, #number of iterations our model runs for
+mRuns = 1, #The number of return migrations our model will carry out
+iSave = 1, #how often to record data
+MGS = 10, #Mating ground size 
+FGS = 10, #Feeding ground size
+FeedingGrounds = np.array([0,0]), #feeding ground centre location
+migrationTrigger = 1, #Migration trigger (when to start migration to breeding ground)
+returnTrigger = 6000, #When to return to feeding grounds. 
+hearingThresh = 10, #CutoffDistance - How far our agents can hear a song before they can move towards it. 
+probVec = np.array([ [0,1] , [2000,1], [6000,1],[8000,1] ]),#Controls probability of agent singing. 
+                                                            #Here they have a 100% chance of singing at 
+                                                            #iterations 0,2000,6000, and 8000. If you 
+                                                            #changes the second part of that array to [2000,0.5]
+                                                            #then there would be a 50% chance of them singing from that 
+                                                            #iteration until they reach iteration 6000
+
+coinFlip = np.array([0.5,0.5]), #This controls the probability of a weighted edit being carried out 
+filename='runNumber_largeR', #Filename for saving your output mat file. 
+inputFile = 'testbook.xlsx', #the name of the input excel file
+pL = np.array([0.8,0.1, 0.1]), #This controls the probability of adding, deleting, or substituting a value in a song. 
+modelMode = 'distance' #The model mode. Here it’s ‘distance’ by default. 
+
+In order to use the other model modes, set the modeModel parameter to one of the following 
+
+'novelty' - for novelty version of mode
+'weightedEditsD'  -weighted edits with distance only
+'weightedEditsN'  -weighted edits with novelty. 
+
+When the model starts running it will print how much of the model has run so far in percentages. 
+
+When it finishes the time the model took to run will print. You’ll end up with a mat file that has the same name as the filename variable. 
+
+In order to analyse the model, open Matlab and change directory to the folder that the model and fun_submat function are kept in. 
+
+Type the following 
+
+[Index, X, Y, Song_length, Sing_state, SUB_d,SUB_POP, parameters] = fun_submat(filename)
+
+Where filename is the name of the file produced by the model built in Python. 
+You will receive a variety of variables that will allow you to examine the model results.
