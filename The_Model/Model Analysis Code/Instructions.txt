@@ -1,0 +1,9 @@
+Script Author and Affiliation: Luca Lamoni, University of St Andrews
+Paper title: “Using agent-based models to understand the role of individuals in the song evolution of humpback whales ( _Megaptera novaeangliae_ )”
+Please provide comments and questions at ll42@st-andrews.ac.uk
+
+1. Run the agent-based model using UnifiedModel.py
+2. Extract the data from the .mat file/s produced by the agent-based model using extraction_function_loop.m script in MAtlab
+3. Plot the mean SR dissimilarity for one or more experiments using Mean_SR_dissimilarity_plotting.m in matlab
+
+
