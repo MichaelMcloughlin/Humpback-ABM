@@ -15,7 +15,7 @@ Where the … is a placeholder for your own root directory.
 Then open up python or whatever python compiler you want. 
 I usually just run my version of python from the command line and type the following:
 
-execfile(‘UnifiedModel_12040217.py’) 
+execfile(‘UnifiedModel.py’) 
 
 Then to run the model type the following:
 
