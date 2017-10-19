@@ -59,12 +59,5 @@ In order to use the other model modes, set the modeModel parameter to one of the
 When the model starts running it will print how much of the model has run so far in percentages. 
 
 When it finishes the time the model took to run will print. You’ll end up with a mat file that has the same name as the filename variable. 
-
-In order to analyse the model, open Matlab and change directory to the folder that the model and fun_submat function are kept in. 
-
-Type the following 
-
-[Index, X, Y, Song_length, Sing_state, SUB_d,SUB_POP, parameters] = fun_submat(filename)
-
-Where filename is the name of the file produced by the model built in Python. 
-You will receive a variety of variables that will allow you to examine the model results.
+After you finish running the model, download a copy of the folder titled "Model analysis code" and place your resulting matlab file in
+there. Then you can follow the instructions provided in the readme inside that folder. Enjoy!
